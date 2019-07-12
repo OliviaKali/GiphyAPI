@@ -37,7 +37,7 @@ $(document).ready(function() {
   renderButtons();
 
 
-  $("button").on("click", function() {
+  $(document).on("click", "button", function() {
     // $("#giphyImages").empty();
     // $("button").removeClass("active");
     // $(this).addClass("active");
