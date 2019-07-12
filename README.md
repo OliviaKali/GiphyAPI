@@ -1,1 +1,3 @@
 # GiphyAPI
+
+I have created a website using the Giphy API, which allows me to access data directly from giphy to implement it onto my site. The website it interactive with the viewer because it allows the user to add buttons for the theme, which is TV shows, so that they may view gifs from any TV show they like instead of just the list that I have provided. Additionally, each gif appears still until the viewer clicks on it.  
