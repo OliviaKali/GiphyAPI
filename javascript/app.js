@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < topics.length; i++) {
       var a = $("<button>");
-      a.addClass("TVshow");
+      a.addClass("tvShow");
       a.attr("data-name", topics[i]);
       a.text(topics[i]);
       $("#buttons-view").append(a);
@@ -29,8 +29,8 @@ $(document).ready(function() {
 
   $("#add-TVshow").on("click", function(event) {
     event.preventDefault();
-    var TVshows = $("#TVshow-input").val().trim();
-    topics.push(TVshows);
+    var tvShows = $("#TVshow-input").val().trim();
+    topics.push(tvShows);
     renderButtons();
   });
 
@@ -38,9 +38,9 @@ $(document).ready(function() {
 
 
   $("button").on("click", function() {
-    $("#giphyImages").empty();
-    $("button").removeClass("active");
-    $(this).addClass("active");
+    // $("#giphyImages").empty();
+    // $("button").removeClass("active");
+    // $(this).addClass("active");
 
 
   // function displayTVInfo () {
@@ -69,7 +69,7 @@ $(document).ready(function() {
         tvShowImage.attr("data-still", still);
         tvShowImage.attr("data-animate", animation);
         tvShowImage.attr("data-state", "still");
-        tvShowImage.addClass("tvShow-Image");
+        tvShowImage.addClass("tvShow");
 
         gifDiv.append(p);
         gifDiv.append(tvShowImage);
@@ -82,13 +82,14 @@ $(document).ready(function() {
     });
   });
 
-  $(".gif").on("click", function() {
+  $(document).on("click", ".tvShow", function() {
    
     var state = $(this).attr("data-state");
 
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
       $(this).attr("data-state", "animate");
+    
     } else {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
@@ -99,9 +100,8 @@ $(document).ready(function() {
   $("#add-TVshow").on("click", function(event) {
     event.preventDefault();
     var addedTVshows = $("#TVshow-input").val().trim();
-    TVshows.push(addedTVshows);
+    topics.push(addedTVshows);
   })
 
-  $(document).on("click", ".TVshow", displayTVInfo);
 
 });
