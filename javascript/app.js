@@ -42,6 +42,8 @@ $(document).ready(function() {
     $("button").removeClass("active");
     $(this).addClass("active");
 
+
+  // function displayTVInfo () {
     var TVshowBtn = $(this).attr("data-name");
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?api_key=2bWMtTcIEwQIgbcCIAOXnhGFI9XyklEZ&q=" +
@@ -53,18 +55,19 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var results = response.data;
+    
 
       // if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
       for (var i = 0; i < results.length; i++) {
         var gifDiv = $("<div>");
         var rating = results[i].rating;
         var p = $("<p>").text("Rating: " + rating);
-        var animate = results[i].images.fixed_height.url;
-        var still = results[i].images.fixed_height.url;
+        var animation = results[i].images.fixed_height.url;
+        var still = results[i].images.fixed_height_still.url;
         var tvShowImage = $("<img>");
         tvShowImage.attr("src", still);
         tvShowImage.attr("data-still", still);
-        tvShowImage.attr("data-animate", animate);
+        tvShowImage.attr("data-animate", animation);
         tvShowImage.attr("data-state", "still");
         tvShowImage.addClass("tvShow-Image");
 
@@ -72,9 +75,10 @@ $(document).ready(function() {
         gifDiv.append(tvShowImage);
 
         $("#giphyImages").prepend(gifDiv);
+      }
 
         //}
-      }
+      
     });
   });
 
@@ -98,6 +102,6 @@ $(document).ready(function() {
     TVshows.push(addedTVshows);
   })
 
-  $(document).on("click", ".TVshow", displayMovieInfo);
+  $(document).on("click", ".TVshow", displayTVInfo);
 
 });
