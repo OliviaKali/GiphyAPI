@@ -4,3 +4,16 @@ form,
 input {
   margin: 10px;
 }
+
+h1 {
+  font-size: 50px;
+}
+
+button {
+  padding: 10px;
+}
+
+body {
+  background: url(../images/stripes-light.png);
+  margin: 20px;
+}

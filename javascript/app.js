@@ -60,7 +60,7 @@ $(document).ready(function() {
         var rating = results[i].rating;
         var p = $("<p>").text("Rating: " + rating);
         var animate = results[i].images.fixed_height.url;
-        var still = results[i].images.fixed_height_still.url;
+        var still = results[i].images.fixed_height.url;
         var tvShowImage = $("<img>");
         tvShowImage.attr("src", still);
         tvShowImage.attr("data-still", still);
